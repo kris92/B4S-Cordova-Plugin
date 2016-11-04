@@ -35,8 +35,6 @@
     <license>Apache 2.0</license>
     <author>Ezeeworld</author>
 
-    <dependency id="cordova-plugin-app-event" />
-
     <!-- cordova -->
     <engines>
         <engine name="cordova" version=">=3.6.0" />
