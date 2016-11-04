@@ -23,7 +23,7 @@
  * @APPPLANT_LICENSE_HEADER_END@
 -->
 
-<plugin id="cordova-plugin-app-event"
+<plugin id="com.ezeeworld.b4s.sdk"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         version="1.2.0">
@@ -40,16 +40,20 @@
         <engine name="cordova" version=">=3.6.0" />
     </engines>
 
+    <!-- plugin.xml -->
+
+    <dependency id="cordova-plugin-app-event" url="https://github.com/katzer/cordova-plugin-app-event.git"  />
+
     <!-- ios -->
     <platform name="ios">
-	<config-file target="config.xml" parent="/*">
-        	<feature name="B4SSDK">
-            		<param name="ios-package" value="B4SSDK" />
-            		<param name="onload" value="true" />
-        	</feature>
-    	</config-file>
+    <config-file target="config.xml" parent="/*">
+            <feature name="B4SSDK">
+                    <param name="ios-package" value="B4SSDK" />
+                    <param name="onload" value="true" />
+            </feature>
+        </config-file>
 
-	<!-- The app is able to run in background through networkd fetch mode -->
+    <!-- The app is able to run in background through networkd fetch mode -->
         <config-file target="*-Info.plist" parent="UIBackgroundModes">
             <array>
                 <string>fetch</string>
@@ -60,12 +64,12 @@
         <source-file src="src/ios/B4SSDK.m" />
 
     <framework src="libsqlite3.tbd" />
-	<resource-file src="src/ios/BeaconForStoreStorage.bundle" />
+    <resource-file src="src/ios/BeaconForStoreStorage.bundle" />
     <framework src="src/ios/BeaconForStoreSDK.framework" custom="true" />
 
-	<preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This mode is requested to enable the detection of Neerby iBeacon." />
+    <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This mode is requested to enable the detection of Neerby iBeacon." />
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
-        	<string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
+            <string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
         </config-file>
 
     </platform>
