@@ -60,7 +60,7 @@
         <source-file src="src/ios/B4SSDK.m" />
 
 	<resource-file src="src/ios/BeaconForStoreStorage.bundle" />
-	<framework src="src/ios/BeaconForStoreSDK.framework" />
+	<resource-file src="src/ios/BeaconForStoreSDK.framework" />
 
 	<framework src="libsqlite3.tbd" />
 
