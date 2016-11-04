@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright (c) 2013-2016 by appPlant UG. All rights reserved.
+ *
+ * @APPPLANT_LICENSE_HEADER_START@
+ *
+ * This file contains Original Code and/or Modifications of Original Code
+ * as defined in and that are subject to the Apache License
+ * Version 2.0 (the 'License'). You may not use this file except in
+ * compliance with the License. Please obtain a copy of the License at
+ * http://opensource.org/licenses/Apache-2.0/ and read it before using this
+ * file.
+ *
+ * The Original Code and all software distributed under the License are
+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
+ * Please see the License for the specific language governing rights and
+ * limitations under the License.
+ *
+ * @APPPLANT_LICENSE_HEADER_END@
+-->
+
+<plugin id="cordova-plugin-app-event"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        version="1.2.0">
+
+    <name>Neerby SDK Plugin</name>
+    <description>Neerby SDK integration for Cordova</description>
+    <keywords>B4S Neerby</keywords>
+    <repo>https://github.com/kris92/B4S-Cordova-Plugin.git</repo>
+    <license>Apache 2.0</license>
+    <author>Ezeeworld</author>
+
+    <dependency id="cordova-plugin-app-event" url="https://github.com/katzer/cordova-plugin-app-event" />
+
+    <!-- cordova -->
+    <engines>
+        <engine name="cordova" version=">=3.6.0" />
+    </engines>
+
+    <!-- ios -->
+    <platform name="ios">
+	<config-file target="config.xml" parent="/*">
+        	<feature name="B4SSDK">
+            		<param name="ios-package" value="B4SSDK" />
+            		<param name="onload" value="true" />
+        	</feature>
+    	</config-file>
+
+	<!-- The app is able to run in background through networkd fetch mode -->
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>fetch</string>
+            </array>
+        </config-file>
+
+        <header-file src="src/ios/B4SSDK.h" />
+        <source-file src="src/ios/B4SSDK.m" />
+
+	<resource-file src="src/ios/BeaconForStoreStorage.bundle" />
+	<resource-file src="src/ios/BeaconForStoreSDK.framework" />
+
+	<framework src="libsqlite3.tbd" />
+
+	<preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This mode is requested to enable the detection of Neerby iBeacon." />
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+        	<string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
+        </config-file>
+
+    </platform>
+
+</plugin>
