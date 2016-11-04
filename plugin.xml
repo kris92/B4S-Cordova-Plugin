@@ -59,10 +59,9 @@
         <header-file src="src/ios/B4SSDK.h" />
         <source-file src="src/ios/B4SSDK.m" />
 
+    <framework src="libsqlite3.tbd" />
 	<resource-file src="src/ios/BeaconForStoreStorage.bundle" />
     <framework src="src/ios/BeaconForStoreSDK.framework" custom="true" />
-
-	<framework src="libsqlite3.tbd" />
 
 	<preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This mode is requested to enable the detection of Neerby iBeacon." />
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
