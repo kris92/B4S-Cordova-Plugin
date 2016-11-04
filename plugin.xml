@@ -40,6 +40,9 @@
         <engine name="cordova" version=">=3.6.0" />
     </engines>
 
+    <!-- plugin.xml -->
+    <dependency id="cordova-plugin-app-event" />
+
     <!-- ios -->
     <platform name="ios">
 	<config-file target="config.xml" parent="/*">
