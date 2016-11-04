@@ -35,7 +35,7 @@
     <license>Apache 2.0</license>
     <author>Ezeeworld</author>
 
-    <dependency url="https://github.com/katzer/cordova-plugin-app-event" />
+    <dependency id="app-event" url="https://github.com/katzer/cordova-plugin-app-event" />
 
     <!-- cordova -->
     <engines>
