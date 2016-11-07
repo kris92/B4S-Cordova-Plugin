@@ -91,7 +91,7 @@
             <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
         </config-file>
 
-        <source-file src="src/android/B4SSDK.java" target-dir="src/com/ezeeworld/b4s/cordova" />
+        <source-file src="src/android/B4SSDK.java" target-dir="src/org/apache/cordova/b4s" />
         <lib-file src="src/android/libs/b4s-android-sdk-playservices921.aar" target-dir="libs" />
         <lib-file src="src/android/libs/b4s-android-sdk.aar" target-dir="libs" />
 
