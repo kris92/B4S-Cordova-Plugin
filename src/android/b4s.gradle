@@ -1,3 +1,13 @@
+allprojects {
+    repositories {
+        mavenCentral();
+        jcenter()
+        flatDir{
+            dirs 'libs'
+        }
+    }
+}
+
 dependencies {
     // B4S dependencies
     compile 'nl.qbusict:cupboard:2.1.4'

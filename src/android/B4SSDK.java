@@ -1,5 +1,8 @@
 package org.apache.cordova.b4s;
 
+import android.app.Application;
+import android.content.Context;
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -21,8 +24,9 @@ public class B4SSDK extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         System.out.println("CDV-B4SSDK:"+action);
-        if (action.equals("echo")) {
-            String message = args.getString(0);
+        if (action.equals("init")) {
+            String appID = args.getString(0);
+            System.out.println("CDV-B4SSDK appID="+appID);
             this.init(message, callbackContext);
             return true;
         }
@@ -30,8 +34,10 @@ public class B4SSDK extends CordovaPlugin {
     }
 
     private void init(String message, CallbackContext callbackContext) {
+        Application application = this.cordova.getActivity().getApplication();
+
         // Initialize the B4S SDK with our app-specific registration ID
-        B4SSettings settings = B4SSettings.init(this, "MY-APP-ID");
+        B4SSettings settings = B4SSettings.init(application, "MY-APP-ID");
 
         // Enable remote push notifications
 //      settings.setPushMessagingSenderId("MY-GOOGLE-SENDER-ID");
@@ -45,7 +51,7 @@ public class B4SSDK extends CordovaPlugin {
 
 
         // Start the monitoring service, if needed
-        MonitoringManager.ensureMonitoringService(this);
+        MonitoringManager.ensureMonitoringService(application);
 
         callbackContext.success(message);
 
