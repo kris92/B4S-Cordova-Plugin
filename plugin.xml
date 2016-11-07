@@ -91,6 +91,53 @@
             <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
         </config-file>
 
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <application>
+                <!-- Background monitoring for beacons -->
+                <service
+                    android:name="com.ezeeworld.b4s.android.sdk.monitor.MonitoringManager" >
+                    <intent-filter>
+                        <action android:name="com.ezeeworld.b4s.android.sdk.monitor.B4S_ENSURE_SCANNING" />
+                        <action android:name="com.ezeeworld.b4s.android.sdk.monitor.B4S_QUERY_SCHEDULE" />
+                        <action android:name="com.ezeeworld.b4s.android.sdk.monitor.B4S_SCHEDULE_RESULT" />
+                        <action android:name="com.ezeeworld.b4s.android.sdk.monitor.B4S_QUERY_VERSION" />
+                        <action android:name="com.ezeeworld.b4s.android.sdk.monitor.B4S_REPORT_VERSION" />
+                    </intent-filter>
+                </service>
+                <service
+                    android:name="com.ezeeworld.b4s.android.sdk.monitor.InteractionService" >
+                    <intent-filter>
+                        <action android:name="com.ezeeworld.b4s.android.sdk.monitor.B4S_OBSERVATIONS" />
+                        <!-- To be uncommented for Beacon update support  -->
+                        <action android:name="com.ezeeworld.b4s.android.sdk.monitor.B4S_BEACONS" />
+                    </intent-filter>
+                </service>
+
+                <activity
+                    android:name="com.ezeeworld.b4s.android.sdk.monitor.WebViewInteractionActivity"
+                    android:configChanges="orientation|keyboardHidden"
+                    android:noHistory="true" />
+
+                <receiver android:name="com.ezeeworld.b4s.android.sdk.monitor.SystemEventReceiver">
+                    <intent-filter>
+                        <action android:name="android.intent.action.ACTION_USER_PRESENT" />
+                        <action android:name="android.intent.action.BOOT_COMPLETED" />
+                    </intent-filter>
+                </receiver>
+
+                <!-- Push messaging -->
+                <receiver
+                    android:name="com.google.android.gms.gcm.GcmReceiver"
+                    android:permission="com.google.android.c2dm.permission.SEND">
+                    <intent-filter>
+                        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                        <category android:name="${applicationId}" />
+                    </intent-filter>
+                </receiver>
+            </application>
+        </config-file>
+
         <source-file src="src/android/B4SSDK.java" target-dir="src/org/apache/cordova/b4s" />
         <lib-file src="src/android/libs/b4s-android-sdk-playservices921.aar" target-dir="libs" />
         <lib-file src="src/android/libs/b4s-android-sdk.aar" target-dir="libs" />
