@@ -27,7 +27,7 @@ public class B4SSDK extends CordovaPlugin {
         if (action.equals("init")) {
             String appID = args.getString(0);
             System.out.println("CDV-B4SSDK appID="+appID);
-            this.init(message, callbackContext);
+            this.init(appID, callbackContext);
             return true;
         }
         return false;
