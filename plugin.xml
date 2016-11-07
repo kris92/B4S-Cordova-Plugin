@@ -104,8 +104,8 @@
 
         <framework src="src/android/b4s.gradle" custom="true" type="gradleReference" />
 
-        <js-module src="www/B4SSDKHandle.js" name="B4SSDKHandle">
-            <clobbers target="B4SSDKHandle" />
+        <js-module src="www/B4SSDKHandle.js" name="b4sSDK">
+            <clobbers target="b4sSDK" />
         </js-module>
     </platform>
 

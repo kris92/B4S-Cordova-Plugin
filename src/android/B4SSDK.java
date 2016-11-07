@@ -33,11 +33,13 @@ public class B4SSDK extends CordovaPlugin {
         return false;
     }
 
-    private void init(String message, CallbackContext callbackContext) {
+    private void init(String appID, CallbackContext callbackContext) {
         Application application = this.cordova.getActivity().getApplication();
 
         // Initialize the B4S SDK with our app-specific registration ID
-        B4SSettings settings = B4SSettings.init(application, "MY-APP-ID");
+        B4SSettings settings = B4SSettings.init(application, appID);
+        settings.setShouldLogMatching(true);
+        settings.setShouldLogScanning(true);
 
         // Enable remote push notifications
 //      settings.setPushMessagingSenderId("MY-GOOGLE-SENDER-ID");
@@ -53,7 +55,7 @@ public class B4SSDK extends CordovaPlugin {
         // Start the monitoring service, if needed
         MonitoringManager.ensureMonitoringService(application);
 
-        callbackContext.success(message);
+        callbackContext.success("OK"+appID);
 
         /*if (message != null && message.length() > 0) {
             callbackContext.success(message);
