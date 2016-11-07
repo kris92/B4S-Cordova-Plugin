@@ -92,10 +92,17 @@
         </config-file>
 
         <source-file src="src/android/B4SSDK.java" target-dir="src/com/ezeeworld/b4s/cordova" />
-        <source-file src="src/android/libs/b4s-android-sdk-playservices921.aar" target-dir="libs" />
-        <source-file src="src/android/libs/b4s-android-sdk.aar" target-dir="libs" />
+        <lib-file src="src/android/libs/b4s-android-sdk-playservices921.aar" target-dir="libs" />
+        <lib-file src="src/android/libs/b4s-android-sdk.aar" target-dir="libs" />
 
-        <framework src="src/android/b4s.gradle" custom="true" type="gradleReference" />
+        <framework src="nl.qbusict:cupboard:2.1.4" />
+        <framework src="de.greenrobot:eventbus:2.4.0" />
+        <framework src="com.squareup.retrofit2:converter-jackson:2.0.0" />
+        <framework src="com.google.android.gms:play-services-location:9.2.1" />
+        <framework src="com.google.android.gms:play-services-ads:9.2.1" />
+        <framework src="com.google.android.gms:play-services-gcm:9.2.1" />
+
+        <!-- <framework src="src/android/b4s.gradle" custom="true" type="gradleReference" /> -->
     </platform>
 
 </plugin>
