@@ -77,7 +77,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="B4SSDK" >
-                <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer"/>
+                <param name="android-package" value="org.apache.cordova.b4s.B4SSDK"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
