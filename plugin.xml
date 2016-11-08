@@ -68,11 +68,11 @@
         <resource-file src="src/ios/BeaconForStoreStorage.bundle" />
         <framework src="src/ios/BeaconForStoreSDK.framework" custom="true" />
 
-        <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This mode is requested to enable the detection of Neerby iBeacon." />
+        <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This mode is requested to enable Neerby iBeacon detection." />
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
         </config-file>
-        <preference name="NEERBY_APP_ID" default="SET_YOUR_APP_ID" />
+        <preference name="NEERBY_APP_ID" default="SET_YOUR_OWN_APPID" />
         <config-file target="*-Info.plist" parent="NeerbyAppID">
             <string>$NEERBY_APP_ID</string>
         </config-file>

@@ -9,7 +9,15 @@ The purpose of this plugin is to offer an fast Neerby SDK integration for Cordov
 (`cordova plugin add https://github.com/kris92/B4S-Cordova-Plugin.git`)
 
 #### 2. iOS
-You must set the Neerby ApplicationID for your application.
+You must set the Neerby ApplicationID for your application and set the background mode request application text.
+ApplicationID is set with the NEERBY_APP_ID variable.
+The Background mode text is set with the LOCATION_ALWAYS_USAGE_DESCRIPTION variable.
+
+```sh
+cordova plugin add https://github.com/kris92/B4S-Cordova-Plugin.git --variable NEERBY_APP_ID="SET_YOUR_OWN_APPID" --variable LOCATION_ALWAYS_USAGE_DESCRIPTION="This mode is requested to enable Neerby iBeacon detection."
+```
+
+
 In Xcode, open the 'Build Settings' tab.
 Add a User-Defined setting named NEERBY_APP_ID and set its value with your Neerby ApplicationID.
 
