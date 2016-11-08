@@ -1,4 +1,4 @@
-package com.ezeeworld.sample;
+package com.ezeeworld.neerby;
 
 import android.app.Application;
 
