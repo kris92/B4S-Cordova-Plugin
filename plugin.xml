@@ -72,6 +72,9 @@
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
         </config-file>
+        <config-file target="*-Info.plist" parent="NeerbyAppID">
+            <string>$NEERBY_APP_ID</string>
+        </config-file>
     </platform>
 
     <!-- android -->

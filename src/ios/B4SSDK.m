@@ -36,7 +36,8 @@
                                                  name:kB4SNotificationProcessedNotification
                                                object:nil];
     
-    B4SSingleton *b4sSingleton = [B4SSingleton setupSharedInstanceWithAppId:@"EDIT-AND-SET-YOUR-APPID"];
+    NSString *appID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NeerbyAppID"];
+    B4SSingleton *b4sSingleton = [B4SSingleton setupSharedInstanceWithAppId:appID];
     
     b4sSingleton.delegate = self;
     [b4sSingleton setUserProperty:kB4SUserPropertyUsereMailKey withString:@"cja@ezeeworld.com"];

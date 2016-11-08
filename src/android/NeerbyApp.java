@@ -18,19 +18,19 @@ public class NeerbyApp extends Application {
         super.onCreate();
 
         // Initialize the B4S SDK with our app-specific registration ID
-        B4SSettings settings = B4SSettings.init(this, NeerbyConstants.B4S_APP_ID);
+        B4SSettings settings = B4SSettings.init(this, NeerbyConstants.NEERBY_APP_ID);
         settings.setShouldLogMatching(true);
         settings.setShouldLogScanning(true);
 
         // Enable remote push notifications
-//		settings.setPushMessagingSenderId("MY-GOOGLE-SENDER-ID");
+        // settings.setPushMessagingSenderId("MY-GOOGLE-SENDER-ID");
 
         // Send deep links to our broadcast receiver (instead of the default launcher activity delivery)
         NotificationService.registerDeepLinkStyle(NotificationService.DeepLinkStyle.BroadcastReceiver);
 
-        B4SUserProperty.get().store(B4SUserProperty.USER_FIRST_NAME, "Jean-Michel");
+        /*B4SUserProperty.get().store(B4SUserProperty.USER_FIRST_NAME, "Jean-Michel");
         B4SUserProperty.get().store(B4SUserProperty.USER_LAST_NAME, "Bécatresse");
-        B4SUserProperty.get().store(B4SUserProperty.USER_GENDER, B4SUserProperty.Gender.Male);
+        B4SUserProperty.get().store(B4SUserProperty.USER_GENDER, B4SUserProperty.Gender.Male);*/
 
 
         // Start the monitoring service, if needed
