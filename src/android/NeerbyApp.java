@@ -12,7 +12,7 @@ import com.ezeeworld.b4s.android.sdk.notifications.NotificationService;
 /**
  * Created by kris on 08/11/2016.
  */
-public class MainClass extends Application {
+public class NeerbyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

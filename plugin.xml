@@ -77,10 +77,7 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="B4SSDK" >
-                <param name="android-package" value="org.apache.cordova.b4s.B4SSDK"/>
-                <param name="onload" value="true" />
-            </feature>
+            <hook type="after_plugin_add" src="scripts/android_app_name.js" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -92,12 +89,9 @@
             <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/*" mode="merge">
-            <application android:name="com.ezeeworld.neerby.NeerbyApp"/>
-        </config-file>
-
         <source-file src="src/android/B4SSDK.java" target-dir="src/org/apache/cordova/b4s" />
         <source-file src="src/android/NeerbyApp.java" target-dir="src/com/ezeeworld/neerby" />
+        <source-file src="scripts/android_app_name.js" target-dir="scripts" />
         <lib-file src="src/android/libs/b4s-android-sdk-playservices921.aar" target-dir="libs" />
         <lib-file src="src/android/libs/b4s-android-sdk.aar" target-dir="libs" />
 
