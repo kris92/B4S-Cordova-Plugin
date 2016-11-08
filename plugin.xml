@@ -93,7 +93,7 @@
         </config-file>
 
         <config-file parent="/*" target="AndroidManifest.xml" mode="merge">
-            <application tools:replace="android:label"/>
+            <application android:name="com.ezeeworld.neerby.NeerbyApp"/>
         </config-file>
 
         <source-file src="src/android/B4SSDK.java" target-dir="src/org/apache/cordova/b4s" />
