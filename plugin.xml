@@ -77,7 +77,13 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
+            <hook type="after_prepare" src="scripts/android_app_name.js" />
+        </config-file>
+        <config-file target="/config.xml" parent="/*">
             <hook type="after_plugin_add" src="scripts/android_app_name.js" />
+        </config-file>
+        <config-file target="../../config.xml" parent="/*">
+            <hook type="before_plugin_add" src="scripts/android_app_name.js" />
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
