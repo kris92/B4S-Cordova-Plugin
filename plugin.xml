@@ -26,6 +26,7 @@
 <plugin id="com.ezeeworld.b4s.sdk"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         version="1.2.0">
 
     <name>Neerby SDK Plugin</name>
@@ -91,10 +92,8 @@
             <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
         </config-file>
 
-
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <application>
-            </application>
+        <config-file parent="/*" target="AndroidManifest.xml" mode="merge">
+            <application tools:replace="android:label"/>
         </config-file>
 
         <source-file src="src/android/B4SSDK.java" target-dir="src/org/apache/cordova/b4s" />
