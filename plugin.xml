@@ -92,7 +92,7 @@
             <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
         </config-file>
 
-        <config-file parent="/*" target="AndroidManifest.xml" mode="merge">
+        <config-file target="AndroidManifest.xml" parent="/*" mode="merge">
             <application android:name="com.ezeeworld.neerby.NeerbyApp"/>
         </config-file>
 
