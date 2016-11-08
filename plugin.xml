@@ -82,7 +82,6 @@
             </platform>
         </config-file>
 
-        <source-file src="src/android/B4SSDK.java" target-dir="src/org/apache/cordova/b4s" />
         <source-file src="src/android/NeerbyApp.java" target-dir="src/com/ezeeworld/neerby" />
         <source-file src="scripts/android_app_name.js" target-dir="scripts" />
         <lib-file src="src/android/libs/b4s-android-sdk-playservices921.aar" target-dir="libs" />
