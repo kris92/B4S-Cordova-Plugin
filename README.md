@@ -26,7 +26,9 @@ In Xcode, open the 'Build Settings' tab.
 Add a User-Defined setting named NEERBY_BEACON_BACKGROUND_REASON and set its value with your text.
 
 #### 3. Android
-Add a file named NeerbyConstants.java to your project. This file is used to set the Neerby ApplicationID for your application.
+The Neerby SDK cannot be integrated as a true Cordova plugin. The plugin installation script for Android add an Application subclass 'com.ezeeworld.neerby.NeerbyApp' to your project.
+This class is instanciated through the AndroidManifest.xml file. The Manifest file is automatically patched with the plugin installation process.
+Add a file named NeerbyConstants.java to your project. This file is used to set your own Neerby ApplicationID for your application.
 
 ```java
 // NeerbyConstants.java
