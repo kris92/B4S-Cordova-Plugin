@@ -18,7 +18,7 @@ public class NeerbyApp extends Application {
         super.onCreate();
 
         // Initialize the B4S SDK with our app-specific registration ID
-        B4SSettings settings = B4SSettings.init(this, "39c69be0-0ef2-11e5-8e20-7da7ecb8e82d");
+        B4SSettings settings = B4SSettings.init(this, NeerbyConstants.B4S_APP_ID);
         settings.setShouldLogMatching(true);
         settings.setShouldLogScanning(true);
 
