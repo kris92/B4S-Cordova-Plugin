@@ -78,12 +78,12 @@
     <platform name="android">
         <config-file target="../../config.xml" parent="/widget">
             <platform name="android">
-                <hook type="before_plugin_add" src="/platforms/android/scripts/android_app_name.js" />
+                <hook type="after_plugin_add" src="/platforms/android/scripts/android_app_name.js" />
             </platform>
         </config-file>
         <config-file target="config.xml" parent="/widget">
             <platform name="android">
-                <hook type="before_plugin_add" src="scripts/android_app_name.js" />
+                <hook type="after_plugin_add" src="scripts/android_app_name.js" />
             </platform>
         </config-file>
 
