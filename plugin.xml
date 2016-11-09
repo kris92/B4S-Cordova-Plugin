@@ -86,7 +86,7 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <meta-data android:name="NEERBY_APP_ID" android:value=$NEERBY_APP_ID />
+            <meta-data android:name="NEERBY_APP_ID" android:value="$NEERBY_APP_ID" />
         </config-file>
 
         <source-file src="src/android/NeerbyApp.java" target-dir="src/com/ezeeworld/neerby" />
