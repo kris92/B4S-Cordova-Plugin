@@ -7,16 +7,16 @@ The purpose of this plugin is to offer a simple Neerby SDK integration for Cordo
 
 #### 1. iOS prerequities
 On iOS, the SDK parameters are set through Cordova CLI variables.
-You must set the Neerby ApplicationID for your application and set the background mode request application text.
-- ApplicationID is set with the NEERBY_APP_ID variable.
-- Background mode explanation text is set with the LOCATION_ALWAYS_USAGE_DESCRIPTION variable.
+You must set the Neerby ApplicationID for your application and set the background mode explanation application text.
+- ApplicationID is set through the **NEERBY_APP_ID** variable.
+- Background mode explanation text is set through the **LOCATION_ALWAYS_USAGE_DESCRIPTION** variable.
 
 #### 2. Android
-The Neerby SDK cannot be integrated as a true Cordova plugin. The plugin installation script for Android add an Application subclass 'com.ezeeworld.neerby.NeerbyApp' to your project.
+The Neerby SDK cannot be integrated as a true Cordova plugin. So, the plugin installation script for Android add an Application subclass 'com.ezeeworld.neerby.NeerbyApp' to your project.
 This class is instanciated through the AndroidManifest.xml file. The Manifest file is automatically patched by the plugin installation process.
 If your project already instanciate an Application subclass, you can follow the standard SDK installation guide. 
 
-To set your ApplicationID, add a file named NeerbyConstants.java to your project. This file is used to set your own Neerby ApplicationID for your application.
+To set your ApplicationID, add a file named **NeerbyConstants.java** to your project. This file is used to set your own Neerby ApplicationID for your application.
 
 ```java
 // NeerbyConstants.java

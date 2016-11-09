@@ -17,24 +17,26 @@ public class NeerbyApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Initialize the B4S SDK with our app-specific registration ID
-        B4SSettings settings = B4SSettings.init(this, NeerbyConstants.NEERBY_APP_ID);
-        settings.setShouldLogMatching(true);
-        settings.setShouldLogScanning(true);
+    try {
+            ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            String appID = bundle.getString("NEERBY_APP_ID");
+            // Initialize the B4S SDK with our app-specific registration ID
+            B4SSettings settings = B4SSettings.init(this, NeerbyConstants.NEERBY_APP_ID);
+            settings.setShouldLogMatching(true);
+            settings.setShouldLogScanning(true);
 
-        // Enable remote push notifications
-        // settings.setPushMessagingSenderId("MY-GOOGLE-SENDER-ID");
+            // Enable remote push notifications
+            // settings.setPushMessagingSenderId("MY-GOOGLE-SENDER-ID");
 
-        // Send deep links to our broadcast receiver (instead of the default launcher activity delivery)
-        NotificationService.registerDeepLinkStyle(NotificationService.DeepLinkStyle.BroadcastReceiver);
-
-        /*B4SUserProperty.get().store(B4SUserProperty.USER_FIRST_NAME, "Jean-Michel");
-        B4SUserProperty.get().store(B4SUserProperty.USER_LAST_NAME, "Bécatresse");
-        B4SUserProperty.get().store(B4SUserProperty.USER_GENDER, B4SUserProperty.Gender.Male);*/
+            // Send deep links to our broadcast receiver (instead of the default launcher activity delivery)
+            NotificationService.registerDeepLinkStyle(NotificationService.DeepLinkStyle.BroadcastReceiver);
 
 
-        // Start the monitoring service, if needed
-        MonitoringManager.ensureMonitoringService(this);
-
+            // Start the monitoring service, if needed
+            MonitoringManager.ensureMonitoringService(this);
+        } catch (Exception e) {
+            System.err.println("Exception raised while initialising Neerby SDK: " + e.getMessage());
+        }
     }
 }

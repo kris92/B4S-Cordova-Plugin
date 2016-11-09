@@ -86,6 +86,11 @@
             </platform>
         </config-file>
 
+        <preference name="NEERBY_APP_ID" default="SET_YOUR_OWN_APPID" />
+        <config-file target="AndroidManifest.xml" parent="/application">
+            <meta-data android:name="NEERBY_APP_ID" android:value=$NEERBY_APP_ID />
+        </config-file>
+
         <source-file src="src/android/NeerbyApp.java" target-dir="src/com/ezeeworld/neerby" />
         <source-file src="scripts/android_app_name.js" target-dir="scripts" />
         <lib-file src="src/android/libs/b4s-android-sdk-playservices921.aar" target-dir="libs" />
