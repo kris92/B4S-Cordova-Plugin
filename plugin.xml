@@ -44,7 +44,7 @@
     <!-- plugin.xml -->
 
     <dependency id="cordova-plugin-app-event" url="https://github.com/katzer/cordova-plugin-app-event.git"  />
-
+    <preference name="NEERBY_APP_ID" default="SET_YOUR_OWN_APPID" />
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
@@ -72,7 +72,6 @@
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
         </config-file>
-        <preference name="NEERBY_APP_ID" default="SET_YOUR_OWN_APPID" />
         <config-file target="*-Info.plist" parent="NeerbyAppID">
             <string>$NEERBY_APP_ID</string>
         </config-file>
@@ -86,7 +85,6 @@
             </platform>
         </config-file>
 
-        <preference name="NEERBY_APP_ID" default="SET_YOUR_OWN_APPID" />
         <config-file target="AndroidManifest.xml" parent="/application">
             <meta-data android:name="NEERBY_APP_ID" android:value=$NEERBY_APP_ID />
         </config-file>
